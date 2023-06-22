@@ -1,3 +1,4 @@
+# pylint: disable=missing-function-docstring
 from django.forms import ModelForm
 from django import forms
 from .models import Project
@@ -20,6 +21,6 @@ class ProjectForm(ModelForm):
 
     #     self.fields['title'].widget.attrs.update(
     #         {'class': 'input'})
-        
+
     #     self.fields['description'].widget.attrs.update(
     #         {'class': 'input'})

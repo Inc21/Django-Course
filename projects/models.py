@@ -1,12 +1,15 @@
 # pylint: disable=missing-module-docstring
 import uuid
 from django.db import models
+from users.models import Profile
 
 
 class Project(models.Model):
     """
     Projects database models.
     """
+    owner = models.ForeignKey(
+        Profile, null=True, blank=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     featured_image = models.ImageField(
@@ -32,7 +35,6 @@ class Review(models.Model):
         ('up', 'Up Vote'),
         ('down', 'Down Vote'),
     )
-    #owner =
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     body = models.TextField(null=True, blank=True)
     value = models.CharField(max_length=200, choices=VOTE_TYPE)
