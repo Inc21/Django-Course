@@ -40,7 +40,7 @@ class ProfileForm(ModelForm):
             'social_linkedin', 'social_youtube', 'social_website']
 
     def __init__(self, *args, **kwargs):
-            super(ProfileForm, self).__init__(*args, **kwargs)
+        super(ProfileForm, self).__init__(*args, **kwargs)
 
-            for name, field in self.fields.items():
-                field.widget.attrs.update({'class': 'input'})
+        for name, field in self.fields.items():
+            field.widget.attrs.update({'class': 'input'})
