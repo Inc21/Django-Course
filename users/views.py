@@ -41,7 +41,7 @@ def logout_user(request):
     Logout view
     """
     logout(request)
-    messages.error(request, 'User was logged out')
+    messages.info(request, 'User was logged out')
     return redirect('login')
 
 
