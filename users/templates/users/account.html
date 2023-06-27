@@ -69,7 +69,7 @@
         </div>
         <div class="settings">
           <h3 class="settings__title">Skills</h3>
-          <a class="tag tag--pill tag--sub settings__btn tag--lg" href="#"
+          <a class="tag tag--pill tag--sub settings__btn tag--lg" href="{% url 'create-skill' %}"
             ><i class="fa-solid fa-plus"></i>&nbsp; Add Skill</a
           >
         </div>
@@ -84,10 +84,10 @@
                 </p>
                 </td>
                 <td class="settings__tableActions">
-                <a class="tag tag--pill tag--main settings__btn" href="#"
+                <a class="tag tag--pill tag--main settings__btn" href="{% url 'update-skill' skill.id %}"
                     ><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</a
                 >
-                <a class="tag tag--pill tag--main settings__btn" href="#"
+                <a class="tag tag--pill tag--main settings__btn" href="{% url 'delete-skill' skill.id %}?next=/account"
                     ><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</a
                 >
                 </td>
@@ -112,7 +112,7 @@
               </td>
               <td class="settings__tableActions">
                 <a class="tag tag--pill tag--main settings__btn" href="{% url 'update-project' project.id %}"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Edit</a>
-                <a class="tag tag--pill tag--main settings__btn" href="{% url 'delete-project' project.id %}"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</a>
+                <a class="tag tag--pill tag--main settings__btn" href="{% url 'delete-project' project.id %}?next=/account"><i class="fa-solid fa-trash-can"></i>&nbsp;Delete</a>
               </td>
             </tr>
             {% endfor %}
