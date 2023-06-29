@@ -59,6 +59,8 @@
       </div>
     </section>
 
+    {% include 'pagination.html' with queryset=projects custom_rane=custom_range %}
+
   </main>
 
 {% endblock content %}
