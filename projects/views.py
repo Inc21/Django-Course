@@ -5,14 +5,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Project
 from .forms import ProjectForm
-from .utils import search_projects
+from .utils import search_projects, paginate_projects
 
 
 def projects(request):
-
     projects, search_query = search_projects(request)
+    custom_range, projects = paginate_projects(request, projects, 6)
 
-    context = {'projects': projects}
+    context = {
+        'projects': projects,
+        'search_query': search_query, 'custom_range': custom_range}
     return render(request, 'projects/projects.html', context)
 
 

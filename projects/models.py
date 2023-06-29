@@ -26,6 +26,12 @@ class Project(models.Model):
     def __str__(self):
         return str(self.title)
 
+    class Meta:
+        """
+        Meta
+        """
+        ordering = ['created']
+
 
 class Review(models.Model):
     """
