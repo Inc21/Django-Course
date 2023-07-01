@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django_globals import globals
 from django.db.models import Q
 from .models import Profile, Message
 from .forms import CustomUserCreationForm, ProfileForm, SkillForm, MessageForm

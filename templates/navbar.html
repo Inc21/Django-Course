@@ -20,7 +20,7 @@
           </li>
 
           {% if request.user.is_authenticated %}
-          <li class="header__menuItem"><a href="{% url 'inbox' %}">Inbox {{user.unread_count}}</a></li>
+          <li class="header__menuItem"><a href="{% url 'inbox' %}">Inbox &nbsp;{{unread_count}}</a></li>
           <li class="header__menuItem">
             <a href="{% url 'account' %}">Account</a>
           </li>
