@@ -1,10 +1,15 @@
-# pylint: disable=missing-function-docstring
+"""
+forms.py
+"""
 from django.forms import ModelForm
 from django import forms
 from .models import Project, Review
 
 
 class ProjectForm(ModelForm):
+    """
+    project form
+    """
     class Meta:
         model = Project
         fields = ['title', 'featured_image', 'description', 'demo_link',
